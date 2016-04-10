@@ -8,18 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, DetailShowable {
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+  override func loadView() {
+    view = View()
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  
+  func showDetail() {
+    navigationController?.pushViewController(DetailViewController(), animated: true)
   }
-
-
 }
 
