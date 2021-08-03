@@ -1,7 +1,3 @@
-//
-//  View.swift
-//  SelectorSyntaxSugar
-//
 //  Created by dasdom on 10.04.16.
 //  Copyright © 2016 dasdom. All rights reserved.
 //
@@ -13,25 +9,23 @@ class View: UIView {
   let button: UIButton
   
   override init(frame: CGRect) {
-    button = UIButton(type: .System)
+    button = UIButton(type: .system)
     button.translatesAutoresizingMaskIntoConstraints = false
-    button.setTitle("Detail", forState: .Normal)
+    button.setTitle("Detail", for: .normal)
     button.addTarget(nil,
                      action: .showDetail,
-                     forControlEvents: .TouchUpInside)
+                     for: .touchUpInside)
     
     super.init(frame: frame)
     
-    backgroundColor = UIColor.whiteColor()
+    backgroundColor = .white
     
     addSubview(button)
-    button.centerXAnchor.constraintEqualToAnchor(centerXAnchor).active = true
-    button.centerYAnchor.constraintEqualToAnchor(centerYAnchor).active = true
+    button.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    button.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
   }
   
-  required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
+  required init?(coder aDecoder: NSCoder) { fatalError() }
 }
 
 private extension Selector {
